@@ -1,14 +1,17 @@
 openapi: 3.0.0
 info:
   title: Bulk Syncs
+  description: Bulk Syncs
+  license: 
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  
   version: 1.0.0
 servers:
   - url: https://api.theknowable.com
 paths:
   /projects/b54bb945-184d-4e1d-aaad-2e8641a9908e/overlay:
     post:
-      tags:
-        - default
       summary: >-
         https://api.theknowable.com/projects/7bce747b-1139-478e-a5a9-b77ad7492e22/overlay
       requestBody:
@@ -42,10 +45,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json: {}
   /projects/7bce747b-1139-478e-a5a9-b77ad7492e22/review-status:
     post:
-      tags:
-        - default
       summary: >-
         https://api.theknowable.com/projects/7bce747b-1139-478e-a5a9-b77ad7492e22/review-status
       requestBody:
@@ -70,5 +75,9 @@ paths:
       responses:
         '200':
           description: Successful response
+          content:
+            application/json: {}
+        '401':
+          description: Unauthorized
           content:
             application/json: {}
